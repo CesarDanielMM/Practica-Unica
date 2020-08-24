@@ -14,6 +14,7 @@ while(True):
     A1 = Palabra2[0].lower().lstrip("cargar").lstrip("")
     Palabra2[0] = A1
     Condicion = False
+    NR = True
     C1 = "Cargar"
     C2 = "Seleccionar"
     C3 = "Donde"
@@ -24,6 +25,8 @@ while(True):
     C3M = "*"
     C4 = "Maximo"
     C5 = "Minimo"
+    C6 = "Suma"
+    C7 = "Cuenta"
     DN = False
     DE = False
     DA = False
@@ -38,12 +41,21 @@ while(True):
 
     if (Palabra[0].lower() == C1.lower()):
         ruta = Palabra2[0].lstrip()
+        if (ruta.endswith(".json")):
+            NR = True
+        else:
+            ruta = ruta + ".json"
+
 
         with open(ruta) as contenido:
             dict = json.load(contenido)
         for i in range(len(Palabra2)):
             if(i!=0):
                 ruta = Palabra2[i].lstrip()
+                if(ruta.endswith(".json")):
+                    NR = True
+                else:
+                    ruta = ruta + ".json"
                 with open(ruta) as contenido:
                     dict2 = json.load(contenido)
                     dict = dict+dict2
@@ -221,7 +233,23 @@ while(True):
                 Promedios.append(dict3.get('promedio'))
             print("Valor minimo de promedio: ", min(Promedios))
 
+    if (Palabra[0].lower() == C6.lower()):
+        if(Palabra[1].lower() == C3E.lower()):
+            Edades = []
+            for dict3 in dict:
+                Edades.append(dict3.get('edad'))
+            print("Suma de las edades: ", sum(Edades))
+        elif (Palabra[1].lower() == C3P.lower()):
+            Promedios = []
+            for dict3 in dict:
+                Promedios.append(dict3.get('promedio'))
+            print("Suma de los promedios: ", sum(Promedios))
 
+    if (Palabra[0].lower() == C7.lower()):
+        Registros = []
+        for dict3 in dict:
+                Registros.append(dict3.get('nombre'))
+        print("Numero total de registros: ", len(Edades))
 
 
 
