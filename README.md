@@ -20,12 +20,12 @@ Cargar Prueba1.json, Prueba2.json
 Con este podremos imprimir los datos que coincidan con algún parámetro que le especifiquemos. 
 Por Ejemplo:
 ```
-- Seleccionar nombre, edad Donde nombre = "registro 3"
-- Seleccionar activo, promedio Donde edad = 55 
-- SELECCIONAR nombre, promedio DONDE activo = True
-- SELECCIONAR * DONDE promedio = 56.456
-- seleccionar edad
-- seleccionar *
+Seleccionar nombre, edad Donde nombre = "registro 3"
+Seleccionar activo, promedio Donde edad = 55 
+SELECCIONAR nombre, promedio DONDE activo = True
+SELECCIONAR * DONDE promedio = 56.456
+seleccionar edad
+seleccionar *
 ```
 **Con el \* seleccionamos todos los atributos.**
 
@@ -33,22 +33,22 @@ Por Ejemplo:
 Estos comandos tienen nos permiten encontrar el valor máximo y mínimo de los atributos edad y promedio de todos los registros en memoria.
 Por Ejemplo:
 ```
-- MINIMO edad
-- MAXIMO promedio
+MINIMO edad
+MAXIMO promedio
 ```
 
 ### Suma
 
 Al igual que los anteriores con este sumamos todos los atributos ya sea de edad o del promedio.
 ```
-- SUMA edad
-- SUMA promedio
+SUMA edad
+SUMA promedio
 ```
 ### Cuenta
 
 Este únicamente cuenta el total de registros en memoria.
 ```
-- Cuenta
+Cuenta
 ```
 ### Reportar N
 Este nos genera un reporte en formato HTML que se abrirá en el navegador por defecto. Tendremos que ingresar el numero de registros que queramos.
