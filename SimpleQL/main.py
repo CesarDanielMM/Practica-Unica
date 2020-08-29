@@ -8,7 +8,7 @@ import webbrowser
 while(True):
 
 
-    print("Ingrese un comando de SimpleQl")
+    print("Ingrese un comando:")
     comando = input()
     Palabra = comando.split()
     Palabra2 = comando.split(',')
@@ -61,6 +61,7 @@ while(True):
                 with open(ruta) as contenido:
                     dict2 = json.load(contenido)
                     dict = dict+dict2
+        print("Archivos cargados a memoria")
 
 
 
@@ -108,6 +109,7 @@ while(True):
                             print("edad: ", dict3.get('edad'))
                             print("activo: ", dict3.get('activo'))
                             print("promedio: ", dict3.get('promedio'))
+                        print("-----------------------")
 
             elif (Palabra[PosicionC + 1].lower() == C3E.lower()):
 
@@ -133,6 +135,7 @@ while(True):
                             print("edad: ", dict3.get('edad'))
                             print("activo: ", dict3.get('activo'))
                             print("promedio: ", dict3.get('promedio'))
+                        print("-----------------------")
 
             elif (Palabra[PosicionC + 1].lower() == C3A.lower()):
 
@@ -158,6 +161,7 @@ while(True):
                             print("edad: ", dict3.get('edad'))
                             print("activo: ", dict3.get('activo'))
                             print("promedio: ", dict3.get('promedio'))
+                        print("-----------------------")
 
             elif (Palabra[PosicionC + 1].lower() == C3P.lower()):
 
@@ -183,6 +187,7 @@ while(True):
                             print("edad: ", dict3.get('edad'))
                             print("activo: ", dict3.get('activo'))
                             print("promedio: ", dict3.get('promedio'))
+                        print("-----------------------")
 
         else:
             for y in range(len(Palabra)):
@@ -210,6 +215,7 @@ while(True):
                         print("edad: ", dict3.get('edad'))
                         print("activo: ", dict3.get('activo'))
                         print("promedio: ", dict3.get('promedio'))
+                    print("-----------------------")
 
     if (Palabra[0].lower() == C4.lower()):
         if(Palabra[1].lower() == C3E.lower()):
@@ -305,28 +311,4 @@ while(True):
         url = 'file://' + os.path.realpath('Reporte.html')
 
         webbrowser.open(url, new=2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        print("Reporte creado, se abrira en el navegador")
