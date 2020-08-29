@@ -1,6 +1,7 @@
 import json
 import re
-
+import os
+import webbrowser
 
 
 
@@ -27,6 +28,7 @@ while(True):
     C5 = "Minimo"
     C6 = "Suma"
     C7 = "Cuenta"
+    C8 = "Reportar"
     DN = False
     DE = False
     DA = False
@@ -249,7 +251,64 @@ while(True):
         Registros = []
         for dict3 in dict:
                 Registros.append(dict3.get('nombre'))
-        print("Numero total de registros: ", len(Edades))
+        print("Numero total de registros:", len(Registros))
+
+    if (Palabra[0].lower() == C8.lower()):
+        datos = ""
+        contador = 0
+        for dict3 in dict:
+            if (contador!=int(Palabra[1])):
+                datos += "<tr>\n"
+                datos += "<th scope=\"row\">" + str(contador) + "</th>\n"
+                datos += "<td>" + dict3.get('nombre') + "</td>\n"
+                datos += "<td>" + str(dict3.get('edad')) + "</td>\n"
+                datos += "<td>" + str(dict3.get('activo')) + "</td>\n"
+                datos += "<td>" + str(dict3.get('promedio')) + "</td>\n"
+                datos += "</tr>\n"
+                contador = contador + 1
+
+
+        html_str = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Reporte</title>
+           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        </head>
+        <body>
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Numero</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Activo</th>
+              <th scope="col">Promedio</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          
+          """+datos+"""    
+
+          </tbody>
+        </table>
+        </body>
+        </html>
+
+        """
+
+        Html_file = open("Reporte.html", "w")
+        Html_file.write(html_str)
+        Html_file.close()
+
+        url = 'file://' + os.path.realpath('Reporte.html')
+
+        webbrowser.open(url, new=2)
+
+
+
+
 
 
 
