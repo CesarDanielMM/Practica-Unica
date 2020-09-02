@@ -265,7 +265,7 @@ while(True):
         for dict3 in dict:
             if (contador!=int(Palabra[1])):
                 datos += "<tr>\n"
-                datos += "<th scope=\"row\">" + str(contador) + "</th>\n"
+                datos += "<th scope=\"row\">" + str(contador+1) + "</th>\n"
                 datos += "<td>" + dict3.get('nombre') + "</td>\n"
                 datos += "<td>" + str(dict3.get('edad')) + "</td>\n"
                 datos += "<td>" + str(dict3.get('activo')) + "</td>\n"

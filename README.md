@@ -2,6 +2,10 @@
 
 SimpleQL es un lenguaje de consultas con funcionalidad en consola, con este podremos cargar archivos .json y poder desde realizar consultas hasta generar reportes.
 
+Al ingresar al programa le pedira ingresar un comando, estos se enlistan a continuacion.
+Los comandos se escriben uno por uno y se pulsa enter para que se ejecuten.
+
+
 ## Comandos
 
 A continuación se explicara el uso de los comandos permitios, estos pueden ir en mayúsculas o minúsculas.
